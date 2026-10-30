@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenStock checkout embed</title>
+    <script src="https://openstock.dev/embed.js" defer></script>
+  </head>
+  <body>
+    <!-- Replace with your store slug and a product ID from Catalog → Products → Embed checkout. -->
+    <button data-product="your-product-id" data-store="your-store">Buy now</button>
+
+    <script>
+      window.addEventListener('openstock-purchase-complete', (event) => {
+        // UI feedback only. Confirm payment on your server (webhooks) before fulfilling.
+        console.log('Checkout reported completion', event.detail)
+      })
+    </script>
+  </body>
+</html>
